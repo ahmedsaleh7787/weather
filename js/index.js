@@ -54,6 +54,11 @@ async function getWeather(city) {
         console.log("error");
         SetError.classList.replace("d-none", "d-block");
         removeforSetError.classList.add("d-none");
+
+//https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
+        if (window.matchMedia("(min-width: 400px)").matches) {
+            document.querySelector('.mt-c').style.marginTop = '10rem';
+        }
     }
 
 }
