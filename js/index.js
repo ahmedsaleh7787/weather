@@ -32,7 +32,7 @@ formm.addEventListener("submit", function (e) {
 
 async function getWeather(city) {
     try {
-        const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=b84cd9020d00497988104314252506&q=${city ? city : "cairo"}&days=3`);
+        const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=b84cd9020d00497988104314252506&q=${city ? city : "cairo"}&days=3`);
         const data = await res.json();
         console.log("data", data);
 
