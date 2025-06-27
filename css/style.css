@@ -349,6 +349,6 @@ body {
 
 @media (min-width: 992px) {
     .mt-c {
-    margin-top: 13rem; 
+    margin-top: 13rem!important; 
 }
 }

@@ -36,6 +36,18 @@ async function getWeather(city) {
         const data = await res.json();
         console.log("data", data);
 
+
+
+                document.querySelector('.mt-c').style.marginTop = '50rem';
+
+        // if (window.matchMedia("(max-width: 992px)").matches) {
+        //     document.querySelector('.mt-c').style.marginTop = '50rem';
+        // }
+
+        //         if (window.matchMedia("(min-width: 992px)").matches) {
+        //     document.querySelector('.mt-c').style.marginTop = '13rem';
+        // }
+
         if (data) {
             removeforSetError.classList.remove("d-none");
             SetError.classList.replace("d-block", "d-none");
@@ -55,10 +67,12 @@ async function getWeather(city) {
         SetError.classList.replace("d-none", "d-block");
         removeforSetError.classList.add("d-none");
 
-        //https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
-        if (window.matchMedia("(min-width: 400px)").matches) {
-            document.querySelector('.mt-c').style.marginTop = '10rem';
-        }
+
+        document.querySelector('.mt-c').style.marginTop = '10rem';
+        // //https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
+        // if (window.matchMedia("(min-width: 400px)").matches) {
+        //     document.querySelector('.mt-c').style.marginTop = '10rem';
+        // }
     }
 
 }
