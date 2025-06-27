@@ -55,7 +55,7 @@ async function getWeather(city) {
         SetError.classList.replace("d-none", "d-block");
         removeforSetError.classList.add("d-none");
 
-//https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
+        //https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
         if (window.matchMedia("(min-width: 400px)").matches) {
             document.querySelector('.mt-c').style.marginTop = '10rem';
         }
@@ -93,7 +93,7 @@ function weatherDisplay(list) {
                     </div>
                     <div class="card-body fontColor">
 
-                        <h5 class="card-title mt-3">${list.location.country}</h5>
+                        <h5 class="card-title mt-3">${list.location.name}</h5>
                         <span class="card-text fs-custum-huge fs-custum-sm text-white fw-bold">${list.current.temp_c}&deg;C</span>
                         <img src="https:${list.current.condition.icon}" alt="" class="wHImg ">
                         <span class="spanColor">${list.current.condition.text}</span>
