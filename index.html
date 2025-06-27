@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Weather</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather" />
+    <meta name="keyword" content="Weather" />
+    <meta name="author" content="Ahmed Saleh" />
+
+    <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet'
+        type='text/css'>
+
+    <link rel="stylesheet" href="css/404NotFound.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- start nav bar -->
+    <div class="custom-div"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary custom-nav">
+        <div class="container  ">
+
+            <a class="navbar-brand d-flex" href="#">
+                <img class="img-size me-3" src="images/logo.png" alt="">
+                <div class="d-flex flex-column">
+                    <h1 class="Weather-logo">Weather</h1>
+                    <small class="tagline">tagline goes here</small>
+                </div>
+
+            </a>
+
+
+            <div class="tog d-flex justify-content-center align-items-center ">
+                <button class="navbar-toggler  justify-content-center align-items-center" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+
+            <div class="collapse navbar-collapse custom-nav2 text-center " id="navbarNav">
+                <div class="custom-div"></div>
+
+                <ul class="navbar-nav custom-nav3">
+                    <li class="nav-item border-2 p-2 p-lg-3">
+                        <a class="nav-link active borderCustom borderCustom-home" aria-current="page" href="#">Home</a>
+                    </li>
+                    <div class="border-buttom"></div>
+                    <li class="nav-item p-2 p-lg-3">
+                        <a class="nav-link  borderCustom" href="#">News</a>
+
+                    </li>
+                    <div class="border-buttom "></div>
+                    <li class="nav-item p-2 p-lg-3">
+                        <a class="nav-link  borderCustom width110" href="#">Live cameras</a>
+
+                    </li>
+                    <div class="border-buttom"></div>
+
+                    <li class="nav-item p-2 p-lg-3">
+                        <a class="nav-link  borderCustom" href="#">Photos</a>
+
+                    </li>
+                    <div class="border-buttom"></div>
+                    <li class="nav-item p-2 p-lg-3">
+                        <a class="nav-link  borderCustom" href="#">Contact</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="custom-div"></div>
+    <!-- end nav bar -->
+
+
+
+
+
+    <div class="bg-img mb-c">
+
+        <!-- start find -->
+        <div class="container bt-c position-relative">
+            <nav class="navbar bg-body-tertiary rounded-5 custom-nav">
+                <div class="container">
+                    <form id="formm" class="d-flex justify-content-between w-100" role="search">
+                        <input id="searchinput" class="form-control me-2 custom-nav custom-h" type="search"
+                            placeholder="Find your location..." aria-label="Search" />
+                        <button type="button" class="btn btn-primary rounded-5 custom-w">Find</button>
+                    </form>
+                </div>
+            </nav>
+
+
+
+
+
+
+
+            <!-- https://codepen.io/Ahmed_B_Hameed/pen/LZqNmp  -->
+
+            <!-- Error Page -->
+            <div class="error d-none newFont" id="SetError">
+                <div class="container-floud">
+                    <div class="col-xs-12 ground-color text-center">
+                        <div class="container-error-404">
+                            <div class="clip">
+                                <div class="shadow"><span class="digit thirdDigit"></span></div>
+                            </div>
+                            <div class="clip">
+                                <div class="shadow"><span class="digit secondDigit"></span></div>
+                            </div>
+                            <div class="clip">
+                                <div class="shadow"><span class="digit firstDigit"></span></div>
+                            </div>
+                            <div class="msg">OH!<span class="triangle"></span></div>
+                        </div>
+                        <h2 class="h1">Sorry! Data not found</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- Error Page -->
+
+
+
+
+
+
+
+        </div>
+        <!-- end find -->
+
+
+
+        <!-- start weather cards -->
+        <div class="container mt-5 fs-custum-fam " id="removeforSetError">
+            <div class="row g-0 " id="dataSend">
+
+                <!-- API -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- end weather cards -->
+
+
+
+    <!-- start footer -->
+    <div class="mt-c d-lg-flex">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <div class="container mt-5 col-lg-9">
+                    <nav class="navbar bg-body-tertiary rounded-5 custom-nav">
+                        <div class="container">
+                            <form id="formm" class="d-flex justify-content-between w-100" role="search">
+                                <input id="searchinput" class="form-control me-2 custom-nav custom-h" type="search"
+                                    placeholder="Enter your email to subscribe..." aria-label="Search" />
+                                <button type="button" class="btn btn-primary rounded-5 custom-w">Subscribe</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+
+
+                <div class="container d-lg-flex justify-content-lg-center align-items-center col-lg-3">
+
+
+                    <div class="icons-custom">
+
+                        <span class="fa-stack fa-2x fs-5">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-facebook-f fa-stack-1x fa-inverse"></i>
+                        </span>
+
+
+                        <span class="fa-stack fa-2x fs-5">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+
+
+
+                        <span class="fa-stack fa-2x fs-5">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-google-plus-g fa-stack-1x fa-inverse"></i>
+                        </span>
+
+
+
+                        <span class="fa-stack fa-2x fs-5">
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-brands fa-pinterest fa-stack-1x fa-inverse"></i>
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+        <p class="t-color pt-lg-4 fonts-c">Copyright 2025 Company name. Designed by Ahmed Saleh. All rights reserved</p>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="js/404notfound.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
