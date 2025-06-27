@@ -6,22 +6,74 @@ const SetError = document.getElementById("SetError");
 const removeforSetError = document.getElementById("removeforSetError");
 
 
+
+
+//-------- start location --------
+//this Location point only AI helped me to understand getCurrentPosition & coords.latitude and longitude
+getLocation();
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+
+    } else {
+        alert("المتصفح لا يدعم خاصية تحديد الموقع");
+    }
+}
+
+let locationValue;
+function showPosition(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    locationValue = `${latitude}, ${longitude}`;
+
+
+    (async function () {
+        await getWeather(null, locationValue);
+
+    })();
+
+
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("تم رفض طلب تحديد الموقع.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("معلومات الموقع غير متوفرة.");
+            break;
+        case error.TIMEOUT:
+            alert("انتهى وقت المحاولة.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("حدث خطأ غير معروف.");
+            break;
+    }
+}
+//-------- end location --------
+
+
+
+//get out of the box
 input.addEventListener("blur", function () {
 
     (async function () {
-        await getWeather(input.value);
+        await getWeather(input.value, locationValue);
 
     })();
 
 });
 
-
+//press enter or find button
 formm.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
     (async function () {
-        await getWeather(input.value);
+        await getWeather(input.value, locationValue);
 
     })();
 
@@ -29,24 +81,17 @@ formm.addEventListener("submit", function (e) {
 
 
 
-
-async function getWeather(city) {
+//API function
+async function getWeather(city, locationValue) {
     try {
-        const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=b84cd9020d00497988104314252506&q=${city ? city : "cairo"}&days=3`);
+        const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=b84cd9020d00497988104314252506&q=${city ? city : locationValue}&days=3`);
         const data = await res.json();
         console.log("data", data);
 
 
 
-                document.querySelector('.mt-c').style.marginTop = '50rem';
+        document.querySelector('.mt-c').style.marginTop = '50rem';
 
-        // if (window.matchMedia("(max-width: 992px)").matches) {
-        //     document.querySelector('.mt-c').style.marginTop = '50rem';
-        // }
-
-        //         if (window.matchMedia("(min-width: 992px)").matches) {
-        //     document.querySelector('.mt-c').style.marginTop = '13rem';
-        // }
 
         if (data) {
             removeforSetError.classList.remove("d-none");
@@ -68,11 +113,9 @@ async function getWeather(city) {
         removeforSetError.classList.add("d-none");
 
 
-        document.querySelector('.mt-c').style.marginTop = '10rem';
         // //https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
-        // if (window.matchMedia("(min-width: 400px)").matches) {
-        //     document.querySelector('.mt-c').style.marginTop = '10rem';
-        // }
+        document.querySelector('.mt-c').style.marginTop = '10rem';
+
     }
 
 }
@@ -80,11 +123,6 @@ async function getWeather(city) {
 
 
 
-
-(async function () {
-    await getWeather();
-
-})();
 
 
 
@@ -95,7 +133,7 @@ async function getWeather(city) {
 //https://stackoverflow.com/questions/32543662/how-to-add-the-degrees-celcius-symbol-in-javascript
 
 
-
+//Display the weather function
 function weatherDisplay(list) {
 
     const box = `
