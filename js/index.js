@@ -9,14 +9,12 @@ const removeforSetError = document.getElementById("removeforSetError");
 
 
 //-------- start location --------
-//this Location point only AI helped me to understand getCurrentPosition & coords.latitude and longitude
+//this Location point only AI helped me to understand getCurrentPosition & coords.latitude and longitude and generate fast error function
 getLocation();
 
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
-
-
     } else {
         alert("The browser does not support geolocation.");
     }
@@ -34,13 +32,7 @@ function showPosition(position) {
 
     })();
 
-
-
-
 sendLocationToGoogleScript(locationValue);
-
-
-
 
 }
 
