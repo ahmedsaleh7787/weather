@@ -18,7 +18,7 @@ function getLocation() {
 
 
     } else {
-        alert("المتصفح لا يدعم خاصية تحديد الموقع");
+        alert("The browser does not support geolocation.");
     }
 }
 
@@ -40,16 +40,16 @@ function showPosition(position) {
 function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
-            alert("تم رفض طلب تحديد الموقع.");
+            alert("Location request was denied.");
             break;
         case error.POSITION_UNAVAILABLE:
-            alert("معلومات الموقع غير متوفرة.");
+            alert("Location information is unavailable.");
             break;
         case error.TIMEOUT:
-            alert("انتهى وقت المحاولة.");
+            alert("The request to get user location timed out.");
             break;
         case error.UNKNOWN_ERROR:
-            alert("حدث خطأ غير معروف.");
+            alert("An unknown error occurred.");
             break;
     }
 }
